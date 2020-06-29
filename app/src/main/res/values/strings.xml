@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Real Cost</string>
+
+    <string name="rent">Rent:</string>
+    <string name="food">Groceries:</string>
+    <string name="bills">Bills:</string>
+    <string name="misc">Miscellaneous:</string>
+    <string name="total">Total:</string>
+</resources>
