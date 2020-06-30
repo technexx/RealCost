@@ -97,12 +97,10 @@ public class MainActivity extends AppCompatActivity {
         purchase_cost.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
             }
 
             @Override
@@ -151,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
         String purchase = purchase_cost.getText().toString();
 
         if (!purchase.equals("")) {
-            cost = Integer.parseInt(purchase);
+            cost = Double.parseDouble(purchase);
         }
 
         pct = (double) incomeVal / postExpenses;
