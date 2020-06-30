@@ -8,4 +8,7 @@
     <string name="bills">Bills:</string>
     <string name="misc">Miscellaneous:</string>
     <string name="total">Net Income:</string>
+
+    <string name="item_cost">Item Cost:</string>
+    <string name="actual_cost">Actual Cost:</string>
 </resources>
