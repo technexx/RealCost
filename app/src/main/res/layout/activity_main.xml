@@ -85,6 +85,29 @@
         android:paddingBottom="25dp"/>
 
     <TextView
+        android:id="@+id/net_income_text"
+        android:text="@string/net_income"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expenses_edit"
+        android:layout_marginTop="8dp">
+    </TextView>
+
+    <TextView
+        android:id="@+id/net_income"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/net_income_text"
+        android:layout_marginTop="8dp">
+    </TextView>
+
+    <TextView
         android:id="@+id/purchase_text"
         android:text="@string/item_cost"
         android:textSize="22sp"
@@ -92,7 +115,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/expenses_edit"
+        app:layout_constraintTop_toBottomOf="@id/net_income"
         android:layout_marginTop="12dp">
     </TextView>
 

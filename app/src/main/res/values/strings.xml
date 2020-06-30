@@ -6,6 +6,7 @@
 
     <string name="income">Enter your income</string>
     <string name="expenses">Enter your expenses</string>
+    <string name="net_income">Actual net income is</string>
 
     <string name="rent">Rent:</string>
     <string name="food">Groceries:</string>

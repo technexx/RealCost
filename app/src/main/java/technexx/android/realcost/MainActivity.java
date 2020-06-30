@@ -13,12 +13,13 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText income_edit;
     private EditText expenses_edit;
-    private TextView total_edit;
+    private TextView net_income;
 
     private EditText purchase_cost;
     private TextView actual_cost;
 
     private int incomeVal;
+    private int expenseVal;
     private int postExpenses;
     private double realCost;
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         income_edit = findViewById(R.id.income_edit);
         expenses_edit = findViewById(R.id.expenses_edit);
+        net_income = findViewById(R.id.net_income);
 
         purchase_cost = findViewById(R.id.purchase_cost);
         actual_cost = findViewById(R.id.actual_cost);
@@ -62,18 +64,16 @@ public class MainActivity extends AppCompatActivity {
 
     private void convert() {
         String income = income_edit.getText().toString();
-
-        int rentVal = 0;
-        int billsVal = 0;
-        int miscVal = 0;
+        String expense = expenses_edit.getText().toString();
 
         if(!income.equals("")) {
             incomeVal = Integer.parseInt(income);
-            postExpenses = (incomeVal - (rentVal + billsVal + miscVal));
+            expenseVal = Integer.parseInt(expense);
+            postExpenses = (incomeVal - expenseVal);
             if (postExpenses <0) {
                 postExpenses = 0;
             }
-            total_edit.setText(String.valueOf(postExpenses));
+            net_income.setText(String.valueOf(postExpenses));
         }
     }
 
