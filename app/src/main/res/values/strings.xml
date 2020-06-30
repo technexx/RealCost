@@ -1,7 +1,11 @@
 <resources>
+    <string name="weekly">Weekly</string>
+    <string name="monthly">Monthly</string>
+
     <string name="app_name">Real Cost</string>
 
-    <string name="income">Gross Income:</string>
+    <string name="income">Enter your income</string>
+    <string name="expenses">Enter your expenses</string>
 
     <string name="rent">Rent:</string>
     <string name="food">Groceries:</string>
