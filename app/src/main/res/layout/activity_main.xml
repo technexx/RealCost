@@ -15,173 +15,196 @@
         <TextView
             android:id="@+id/sign_one"
             android:text="@string/dollar"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/income_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="120dp"
+            android:layout_marginEnd="114dp"
             android:textColor="@color/black">
         </TextView>
 
         <TextView
             android:id="@+id/sign_two"
             android:text="@string/dollar"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/expenses_text"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="120dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sign_one"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="114dp"
+            android:textColor="@color/black">
+        </TextView>
+
+        <TextView
+            android:id="@+id/sign_three"
+            android:text="@string/dollar"
+            android:textSize="22sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sign_two"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="114dp"
             android:textColor="@color/black">
         </TextView>
 
         <TextView
             android:id="@+id/sign_four"
             android:text="@string/dollar"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/purchase_text"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="120dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sign_three"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="114dp"
+            android:textColor="@color/black">
+        </TextView>
+
+        <TextView
+            android:id="@+id/sign_five"
+            android:text="@string/dollar"
+            android:textSize="22sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sign_four"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="114dp"
             android:textColor="@color/black">
         </TextView>
 
         <TextView
             android:id="@+id/income_text"
             android:text="@string/income"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="12dp"
-            >
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp">
         </TextView>
 
         <EditText
             android:id="@+id/income_edit"
             android:layout_width="100dp"
             android:layout_height="35dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/income_text"
+            app:layout_constraintTop_toTopOf="parent"
             android:inputType="number"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="4dp"
+            android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
             android:background="@drawable/edit_box"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:gravity="center"/>
 
         <TextView
             android:id="@+id/expenses_text"
             android:text="@string/expenses"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/income_edit"
-            android:layout_marginTop="16dp">
+            app:layout_constraintTop_toBottomOf="@id/income_text"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="26dp">
         </TextView>
 
         <EditText
             android:id="@+id/expenses_edit"
             android:layout_width="100dp"
             android:layout_height="35dp"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/expenses_text"
+            app:layout_constraintTop_toBottomOf="@id/income_edit"
             android:inputType="number"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="4dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
             android:background="@drawable/edit_box"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:gravity="center"/>
 
         <TextView
             android:id="@+id/net_income_text"
             android:text="@string/net_income"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/expenses_edit"
-            android:layout_marginTop="16dp">
+            app:layout_constraintTop_toBottomOf="@id/expenses_text"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="26dp">
         </TextView>
 
         <TextView
             android:id="@+id/net_income"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/net_income_text"
-            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/expenses_edit"
+            android:layout_marginEnd="42dp"
+            android:layout_marginTop="20dp"
             android:textColor="@color/black">
         </TextView>
 
         <TextView
             android:id="@+id/purchase_text"
             android:text="@string/item_cost"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/net_income"
-            android:layout_marginTop="12dp">
+            app:layout_constraintTop_toBottomOf="@id/net_income_text"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="26dp">
         </TextView>
 
         <EditText
             android:id="@+id/purchase_cost"
             android:layout_width="100dp"
             android:layout_height="35dp"
-            app:layout_constraintTop_toBottomOf="@id/purchase_text"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:inputType="numberDecimal"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="4dp"
+            app:layout_constraintTop_toBottomOf="@id/net_income"
+            android:inputType="number"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
             android:background="@drawable/edit_box"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:gravity="center"/>
 
         <TextView
             android:id="@+id/actual_total_text"
             android:text="@string/actual_cost"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/purchase_cost"
-            android:layout_marginTop="16dp">
+            app:layout_constraintTop_toBottomOf="@id/purchase_text"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="26dp">
         </TextView>
 
         <TextView
             android:id="@+id/actual_cost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/actual_total_text"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="4dp"
-            android:textSize="20sp"
-            android:textColor="@color/black"/>
+            app:layout_constraintTop_toBottomOf="@id/purchase_cost"
+            android:layout_marginEnd="42dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            android:gravity="center_horizontal"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
