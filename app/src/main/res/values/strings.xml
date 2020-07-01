@@ -16,4 +16,6 @@
 
     <string name="item_cost">Item Cost:</string>
     <string name="actual_cost">Actual Cost:</string>
+
+    <string name="broke">More than you have!</string>
 </resources>

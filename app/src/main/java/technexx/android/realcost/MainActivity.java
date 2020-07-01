@@ -98,10 +98,8 @@ public class MainActivity extends AppCompatActivity {
             incomeVal = Integer.parseInt(income);
             expenseVal = Integer.parseInt(expense);
             postExpenses = (incomeVal - expenseVal);
-            if (postExpenses <0) {
-                postExpenses = 0;
-            }
             net_income.setText(String.valueOf(postExpenses));
+
             editor.putInt("income", incomeVal);
             editor.putInt("expenses", expenseVal);
             editor.putInt("postExpenses", postExpenses);
@@ -121,7 +119,11 @@ public class MainActivity extends AppCompatActivity {
         pct = (double) incomeVal / postExpenses;
         realCost = (cost * pct);
 
-        actual_cost.setText(String.format("%.2f", realCost));
+        if (postExpenses >0) {
+            actual_cost.setText(String.format("%.2f", realCost));
+        } else {
+            actual_cost.setText(R.string.broke);
+        }
 
     }
 }
