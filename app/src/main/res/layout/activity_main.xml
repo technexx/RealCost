@@ -11,31 +11,41 @@
         android:layout_height="wrap_content"
         tools:context=".MainActivity">
 
-        <Button
-            android:id="@+id/weekly"
+        <TextView
+            android:id="@+id/sign_one"
+            android:text="@string/dollar"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:text="@string/weekly"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="100dp"
-            android:background="@drawable/edit_box_two">
-        </Button>
+            app:layout_constraintTop_toBottomOf="@id/income_text"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="120dp">
+        </TextView>
 
-        <Button
-            android:id="@+id/monthly"
+        <TextView
+            android:id="@+id/sign_two"
+            android:text="@string/dollar"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:text="@string/monthly"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="100dp"
-            android:background="@drawable/edit_box_two">
-        </Button>
+            app:layout_constraintTop_toBottomOf="@id/expenses_text"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="120dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/sign_four"
+            android:text="@string/dollar"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/purchase_text"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="120dp">
+        </TextView>
 
         <TextView
             android:id="@+id/income_text"
@@ -45,24 +55,25 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/weekly"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="12dp">
         </TextView>
 
         <EditText
             android:id="@+id/income_edit"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/income_text"
             android:inputType="number"
             android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
             android:background="@drawable/edit_box"
-            android:paddingBottom="25dp"
-            android:gravity="center_horizontal"/>
+            android:textSize="20sp"
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/expenses_text"
@@ -73,23 +84,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/income_edit"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="16dp">
         </TextView>
 
         <EditText
             android:id="@+id/expenses_edit"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/expenses_text"
             android:inputType="number"
             android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
             android:background="@drawable/edit_box"
-            android:paddingBottom="25dp"
-            android:gravity="center_horizontal"/>
+            android:textSize="20sp"
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/net_income_text"
@@ -100,7 +112,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/expenses_edit"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="16dp">
         </TextView>
 
         <TextView
@@ -111,13 +123,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/net_income_text"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="4dp">
         </TextView>
 
         <TextView
             android:id="@+id/purchase_text"
             android:text="@string/item_cost"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
@@ -128,29 +140,30 @@
 
         <EditText
             android:id="@+id/purchase_cost"
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
             app:layout_constraintTop_toBottomOf="@id/purchase_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:inputType="numberDecimal"
             android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
             android:background="@drawable/edit_box"
-            android:paddingBottom="25dp"
-            android:gravity="center_horizontal"/>
+            android:textSize="20sp"
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/actual_total_text"
             android:text="@string/actual_cost"
-            android:textSize="22sp"
+            android:textSize="20sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/purchase_cost"
-            android:layout_marginTop="4dp">
+            android:layout_marginTop="16dp">
         </TextView>
 
         <TextView
@@ -160,7 +173,7 @@
             app:layout_constraintTop_toBottomOf="@id/actual_total_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:textSize="20sp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Selection;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.EditText;
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
             incomeVal = Integer.parseInt(income);
             expenseVal = Integer.parseInt(expense);
             postExpenses = (incomeVal - expenseVal);
-            net_income.setText(String.valueOf(postExpenses));
+            net_income.setText(getString(R.string.two_part, getString(R.string.dollar), String.valueOf(postExpenses)));
 
             editor.putInt("income", incomeVal);
             editor.putInt("expenses", expenseVal);
@@ -120,7 +121,8 @@ public class MainActivity extends AppCompatActivity {
         realCost = (cost * pct);
 
         if (postExpenses >0) {
-            actual_cost.setText(String.format("%.2f", realCost));
+            actual_cost.setText("%" + String.format("%.2f", realCost));
+            actual_cost.setText(getString(R.string.two_part, getString(R.string.dollar),  String.format("%.2f", realCost)));
         } else {
             actual_cost.setText(R.string.broke);
         }
