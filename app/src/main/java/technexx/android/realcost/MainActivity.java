@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 convert();
+                realCost();
             }
         });
 
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 convert();
+                realCost();
             }
         });
 
@@ -83,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
             }
             @Override
             public void afterTextChanged(Editable s) {
+                convert();
                 realCost();
             }
         });
