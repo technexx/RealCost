@@ -1,6 +1,7 @@
 package technexx.android.realcost;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,7 +9,9 @@ import android.text.Editable;
 import android.text.Selection;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -123,9 +126,8 @@ public class MainActivity extends AppCompatActivity {
         pct = (double) incomeVal / postExpenses;
         realCost = (cost * pct);
 
-        if (postExpenses >0) {
-            actual_cost.setText("%" + String.format("%.2f", realCost));
-            actual_cost.setText(String.format("%.2f", realCost));
+        if (postExpenses >0) { ;
+            actual_cost.setText(getString(R.string.two_part, getString(R.string.dollar), String.format("%.2f", realCost)));
         } else {
             actual_cost.setText(R.string.broke);
         }
