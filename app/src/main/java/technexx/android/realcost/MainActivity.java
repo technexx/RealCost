@@ -123,8 +123,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 popupWindow.setWidth(800);
-                popupWindow.setHeight(700);
-                popupWindow.setElevation(1);
+                popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
                 popupWindow.showAtLocation(aboutLayout, Gravity.CENTER, 0, 0);
             }
         });
@@ -195,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
             actual_cost.setTextColor(getResources().getColor(R.color.black));
         }
 
-        percentage = ( (double) realCost / (double) postExpenses) * 100;
+        percentage = ( (double) cost / (double) postExpenses) * 100;
         actual_pct.setText(getString(R.string.two_part_ns, String.format("%.2f", percentage), getString(R.string.pct)));
     }
 }
