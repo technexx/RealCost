@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sign_three"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="64dp"
             android:layout_marginEnd="114dp"
             android:textColor="@color/black">
         </TextView>
@@ -102,7 +102,8 @@
             android:textCursorDrawable="@drawable/cursor"
             android:background="@drawable/edit_box"
             android:textSize="22sp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textColor="@color/darkGreen"/>
 
         <TextView
             android:id="@+id/expenses_text"
@@ -129,7 +130,8 @@
             android:textCursorDrawable="@drawable/cursor"
             android:background="@drawable/edit_box"
             android:textSize="22sp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textColor="@color/Red_Alt"/>
 
         <TextView
             android:id="@+id/net_income_text"
@@ -169,7 +171,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/net_income_text"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="26dp">
+            android:layout_marginTop="66dp">
         </TextView>
 
         <EditText
@@ -179,13 +181,14 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/net_income"
             android:inputType="number"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="60dp"
             android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
             android:background="@drawable/edit_box"
             android:textSize="22sp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:maxLength="5"/>
 
         <TextView
             android:id="@+id/actual_total_text"
@@ -212,7 +215,9 @@
             android:textCursorDrawable="@drawable/cursor"
             android:background="@drawable/edit_box"
             android:textSize="22sp"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:maxLength="7"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

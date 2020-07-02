@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Selection;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,13 +22,14 @@ public class MainActivity extends AppCompatActivity {
     private EditText expenses_edit;
     private TextView net_income;
 
+    private String purchase;
     private EditText purchase_cost;
     private TextView actual_cost;
 
     private int incomeVal;
     private int expenseVal;
     private int postExpenses;
-    private double realCost;
+    private int realCost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         int savedIncome = pref.getInt("income", 0);
         int savedExpenses = pref.getInt("expenses", 0);
-        int postExpenses = pref.getInt("postExpenses", 0);
+        final int postExpenses = pref.getInt("postExpenses", 0);
 
         income_edit = findViewById(R.id.income_edit);
         expenses_edit = findViewById(R.id.expenses_edit);
@@ -61,7 +64,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 convert();
-                realCost();
+                purchase = purchase_cost.getText().toString();
+                if (!purchase.equals("")) {
+                    realPrice();
+                }
             }
         });
 
@@ -75,7 +81,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 convert();
-                realCost();
+                purchase = purchase_cost.getText().toString();
+                if (!purchase.equals("")) {
+                    realPrice();
+                }
             }
         });
 
@@ -89,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 convert();
-                realCost();
+                realPrice();
             }
         });
     }
@@ -98,39 +107,65 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences("Pref", 0);
         SharedPreferences.Editor editor = pref.edit();
 
+        incomeVal = pref.getInt("income", 0);
+        expenseVal = pref.getInt("expenses", 0);
+        postExpenses = pref.getInt("postExpenses", 0);
+
         String income = income_edit.getText().toString();
         String expense = expenses_edit.getText().toString();
+
+        if (income.equals("")) {
+            incomeVal = 0;
+        }
+        if (expense.equals("")) {
+            expenseVal = 0;
+        }
 
         if(!income.equals("") && !expense.equals("")) {
             incomeVal = Integer.parseInt(income);
             expenseVal = Integer.parseInt(expense);
-            postExpenses = (incomeVal - expenseVal);
-            net_income.setText(String.valueOf(postExpenses));
-
-            editor.putInt("income", incomeVal);
-            editor.putInt("expenses", expenseVal);
-            editor.putInt("postExpenses", postExpenses);
-            editor.apply();
         }
+
+        postExpenses = (incomeVal - expenseVal);
+        net_income.setText(String.valueOf(postExpenses));
+
+        if (postExpenses >0) {
+            net_income.setTextColor(getResources().getColor(R.color.darkGreen));
+        } else if (postExpenses <0) {
+            net_income.setTextColor(getResources().getColor(R.color.Red_Alt));
+        } else {
+            net_income.setTextColor(getResources().getColor(R.color.black));
+        }
+
+        editor.putInt("income", incomeVal);
+        editor.putInt("expenses", expenseVal);
+        editor.putInt("postExpenses", postExpenses);
+        editor.apply();
     }
 
-    private void realCost() {
+    private void realPrice() {
         double pct = 0;
         double cost = 0;
-        String purchase = purchase_cost.getText().toString();
+
+        purchase = purchase_cost.getText().toString();
 
         if (!purchase.equals("")) {
             cost = Double.parseDouble(purchase);
         }
 
         pct = (double) incomeVal / postExpenses;
-        realCost = (cost * pct);
+        realCost = (int) (cost * pct);
 
-        if (postExpenses >0) { ;
-            actual_cost.setText(getString(R.string.two_part, getString(R.string.dollar), String.format("%.2f", realCost)));
+        if (postExpenses >0) {
+            actual_cost.setTextSize(22);
+            actual_cost.setTypeface(null, Typeface.NORMAL);
+            actual_cost.setText(String.valueOf(realCost));
+            actual_cost.setTextColor(getResources().getColor(R.color.Red_Alt));
         } else {
+            actual_cost.setTextSize(15);
+            actual_cost.setTypeface(null, Typeface.BOLD);
             actual_cost.setText(R.string.broke);
+            actual_cost.setTextColor(getResources().getColor(R.color.black));
         }
-
     }
 }
