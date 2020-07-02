@@ -6,6 +6,7 @@
     android:background="@color/Dark_White">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_layout"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -218,6 +219,47 @@
             android:gravity="center"
             android:textColor="@color/black"
             android:maxLength="7"/>
+
+        <TextView
+            android:id="@+id/percentage_text"
+            android:text="@string/percentage"
+            android:textSize="22sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/actual_total_text"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="26dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/percentage"
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/actual_cost"
+            android:inputType="number"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="12dp"
+            android:autofillHints="0"
+            android:textCursorDrawable="@drawable/cursor"
+            android:background="@drawable/edit_box"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:maxLength="7"/>
+
+        <Button
+            android:id="@+id/about"
+            android:text="@string/about"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/percentage"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="150dp"
+            android:layout_marginEnd="12dp">
+        </Button>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

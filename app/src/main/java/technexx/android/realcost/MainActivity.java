@@ -3,6 +3,7 @@ package technexx.android.realcost;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -10,9 +11,13 @@ import android.text.Editable;
 import android.text.Selection;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,11 +30,13 @@ public class MainActivity extends AppCompatActivity {
     private String purchase;
     private EditText purchase_cost;
     private TextView actual_cost;
+    private TextView actual_pct;
 
     private int incomeVal;
     private int expenseVal;
     private int postExpenses;
     private int realCost;
+    private double percentage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +50,14 @@ public class MainActivity extends AppCompatActivity {
         int savedExpenses = pref.getInt("expenses", 0);
         final int postExpenses = pref.getInt("postExpenses", 0);
 
+        Button about_button = findViewById(R.id.about);
         income_edit = findViewById(R.id.income_edit);
         expenses_edit = findViewById(R.id.expenses_edit);
         net_income = findViewById(R.id.net_income);
 
         purchase_cost = findViewById(R.id.purchase_cost);
         actual_cost = findViewById(R.id.actual_cost);
+        actual_pct = findViewById(R.id.percentage);
 
         income_edit.setText(String.valueOf(savedIncome));
         expenses_edit.setText(String.valueOf(savedExpenses));
@@ -99,6 +108,24 @@ public class MainActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 convert();
                 realPrice();
+            }
+        });
+
+        final ConstraintLayout aboutLayout = findViewById(R.id.main_layout);
+
+        LayoutInflater layoutInflater = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View myView = layoutInflater.inflate(R.layout.about, null);
+
+        final PopupWindow popupWindow = new PopupWindow(myView, LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        popupWindow.setFocusable(true);
+
+        about_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow.setWidth(800);
+                popupWindow.setHeight(700);
+                popupWindow.setElevation(1);
+                popupWindow.showAtLocation(aboutLayout, Gravity.CENTER, 0, 0);
             }
         });
     }
@@ -167,5 +194,8 @@ public class MainActivity extends AppCompatActivity {
             actual_cost.setText(R.string.broke);
             actual_cost.setTextColor(getResources().getColor(R.color.black));
         }
+
+        percentage = ( (double) realCost / (double) postExpenses) * 100;
+        actual_pct.setText(getString(R.string.two_part_ns, String.format("%.2f", percentage), getString(R.string.pct)));
     }
 }

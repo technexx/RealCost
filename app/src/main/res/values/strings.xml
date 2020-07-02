@@ -1,6 +1,8 @@
 <resources>
     <string name="dollar">$</string>
+    <string name="pct">%</string>
     <string name="two_part">%1$s %2$s</string>
+    <string name="two_part_ns">%1$s%2$s</string>
 
     <string name="app_name">Real Cost</string>
 
@@ -17,5 +19,10 @@
     <string name="item_cost">Purchase Cost:</string>
     <string name="actual_cost">Actual Cost:</string>
 
+    <string name="percentage">Percent of Income:</string>
+
     <string name="broke">You\'re broke!</string>
+
+    <string name="about">About</string>
+    <string name="description">This is a simple calculator designed to highlight the real cost of purchases when compared to your net income. I often fall into the trap of, \"I made X amount this month, of course I can afford this!\" while conveniently forgetting my bills.\n\nThe formula is a straight percentage multiplier. For example, if your income is $2000 and your expenses are $1500, you are left with $500. A $20 purchase would thus, relative to your net income, cost four times as much, or $80. </string>
 </resources>
