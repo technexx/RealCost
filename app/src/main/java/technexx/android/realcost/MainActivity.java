@@ -156,13 +156,13 @@ public class MainActivity extends AppCompatActivity {
         postExpenses = (incomeVal - expenseVal);
         net_income.setText(String.valueOf(postExpenses));
 
-        if (postExpenses >0) {
-            net_income.setTextColor(getResources().getColor(R.color.darkGreen));
-        } else if (postExpenses <0) {
-            net_income.setTextColor(getResources().getColor(R.color.Red_Alt));
-        } else {
-            net_income.setTextColor(getResources().getColor(R.color.black));
-        }
+//        if (postExpenses >0) {
+//            net_income.setTextColor(getResources().getColor(R.color.darkGreen));
+//        } else if (postExpenses <0) {
+//            net_income.setTextColor(getResources().getColor(R.color.Red_Alt));
+//        } else {
+//            net_income.setTextColor(getResources().getColor(R.color.black));
+//        }
 
         editor.putInt("income", incomeVal);
         editor.putInt("expenses", expenseVal);
@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity {
             actual_cost.setTextSize(22);
             actual_cost.setTypeface(null, Typeface.NORMAL);
             actual_cost.setText(String.valueOf(realCost));
-            actual_cost.setTextColor(getResources().getColor(R.color.Red_Alt));
+//            actual_cost.setTextColor(getResources().getColor(R.color.Red_Alt));
             percentage = ( (double) cost / (double) postExpenses) * 100;
             actual_pct.setText(getString(R.string.two_part_ns, String.format("%.2f", percentage), getString(R.string.pct)));
         } else {
@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
             actual_cost.setTextSize(15);
             actual_cost.setTypeface(null, Typeface.BOLD);
             actual_cost.setText(R.string.broke);
-            actual_cost.setTextColor(getResources().getColor(R.color.black));
+//            actual_cost.setTextColor(getResources().getColor(R.color.black));
 
             actual_pct.setText("");
         }

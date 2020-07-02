@@ -191,7 +191,8 @@
             android:background="@drawable/edit_box"
             android:textSize="22sp"
             android:gravity="center"
-            android:maxLength="5"/>
+            android:maxLength="5"
+            android:textColor="@color/darkGreen"/>
 
         <TextView
             android:id="@+id/actual_total_text"
@@ -219,7 +220,7 @@
             android:background="@drawable/edit_box"
             android:textSize="22sp"
             android:gravity="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/Red_Alt" />
 
         <TextView
             android:id="@+id/percentage_text"
