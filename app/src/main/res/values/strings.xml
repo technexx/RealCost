@@ -8,7 +8,7 @@
 
     <string name="income">Monthly Income:</string>
     <string name="expenses">Monthly Expenses:</string>
-    <string name="net_income">Actual Income:</string>
+    <string name="net_income">Real Income:</string>
 
     <string name="rent">Rent:</string>
     <string name="food">Groceries:</string>
@@ -19,7 +19,7 @@
     <string name="item_cost">Purchase Cost:</string>
     <string name="actual_cost">Actual Cost:</string>
 
-    <string name="percentage">Percent of Income:</string>
+    <string name="percentage">Percent of Real Income:</string>
 
     <string name="broke">You\'re broke!</string>
 

@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.Selection;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -170,6 +171,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void realPrice() {
+        SharedPreferences pref = getSharedPreferences("Pref", 0);
+        SharedPreferences.Editor editor = pref.edit();
+
+        incomeVal = pref.getInt("income", 0);
+        expenseVal = pref.getInt("expenses", 0);
+        postExpenses = pref.getInt("postExpenses", 0);
+
         double pct = 0;
         double cost = 0;
 
@@ -183,18 +191,22 @@ public class MainActivity extends AppCompatActivity {
         realCost = (int) (cost * pct);
 
         if (postExpenses >0) {
+            actual_cost.setFilters(new InputFilter[] {new InputFilter.LengthFilter(7)});
             actual_cost.setTextSize(22);
             actual_cost.setTypeface(null, Typeface.NORMAL);
             actual_cost.setText(String.valueOf(realCost));
             actual_cost.setTextColor(getResources().getColor(R.color.Red_Alt));
+            percentage = ( (double) cost / (double) postExpenses) * 100;
+            actual_pct.setText(getString(R.string.two_part_ns, String.format("%.2f", percentage), getString(R.string.pct)));
         } else {
+            actual_cost.setFilters(new InputFilter[] {new InputFilter.LengthFilter(15)});
             actual_cost.setTextSize(15);
             actual_cost.setTypeface(null, Typeface.BOLD);
             actual_cost.setText(R.string.broke);
             actual_cost.setTextColor(getResources().getColor(R.color.black));
+
+            actual_pct.setText("");
         }
 
-        percentage = ( (double) cost / (double) postExpenses) * 100;
-        actual_pct.setText(getString(R.string.two_part_ns, String.format("%.2f", percentage), getString(R.string.pct)));
     }
 }
