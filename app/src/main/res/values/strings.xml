@@ -9,6 +9,8 @@
     <string name="income">Monthly Income:</string>
     <string name="expenses">Monthly Expenses:</string>
     <string name="net_income">Real Income:</string>
+    <string name="hours_worked">Hours Worked:</string>
+    <string name="hours_divided">Real Hourly Wage:</string>
 
     <string name="rent">Rent:</string>
     <string name="food">Groceries:</string>
@@ -17,7 +19,7 @@
     <string name="total">Net Income:</string>
 
     <string name="item_cost">Purchase Cost:</string>
-    <string name="actual_cost">Actual Cost:</string>
+    <string name="actual_cost">Hours Cost:</string>
 
     <string name="percentage">Percent of Real Income:</string>
 

@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String purchase;
     private EditText purchase_cost;
-    private TextView actual_cost;
+    private TextView hours_cost;
     private TextView actual_pct;
 
     private int incomeVal;
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         net_income = findViewById(R.id.net_income);
 
         purchase_cost = findViewById(R.id.purchase_cost);
-        actual_cost = findViewById(R.id.actual_cost);
+        hours_cost = findViewById(R.id.hours_cost);
         actual_pct = findViewById(R.id.percentage);
 
         income_edit.setText(String.valueOf(savedIncome));
@@ -191,19 +191,17 @@ public class MainActivity extends AppCompatActivity {
         realCost = (int) (cost * pct);
 
         if (postExpenses >0) {
-            actual_cost.setFilters(new InputFilter[] {new InputFilter.LengthFilter(7)});
-            actual_cost.setTextSize(22);
-            actual_cost.setTypeface(null, Typeface.NORMAL);
-            actual_cost.setText(String.valueOf(realCost));
-//            actual_cost.setTextColor(getResources().getColor(R.color.Red_Alt));
+            hours_cost.setFilters(new InputFilter[] {new InputFilter.LengthFilter(7)});
+            hours_cost.setTextSize(22);
+            hours_cost.setTypeface(null, Typeface.NORMAL);
+            hours_cost.setText(String.valueOf(realCost));
             percentage = ( (double) cost / (double) postExpenses) * 100;
             actual_pct.setText(getString(R.string.two_part_ns, String.format("%.2f", percentage), getString(R.string.pct)));
         } else {
-            actual_cost.setFilters(new InputFilter[] {new InputFilter.LengthFilter(15)});
-            actual_cost.setTextSize(15);
-            actual_cost.setTypeface(null, Typeface.BOLD);
-            actual_cost.setText(R.string.broke);
-//            actual_cost.setTextColor(getResources().getColor(R.color.black));
+            hours_cost.setFilters(new InputFilter[] {new InputFilter.LengthFilter(15)});
+            hours_cost.setTextSize(15);
+            hours_cost.setTypeface(null, Typeface.BOLD);
+            hours_cost.setText(R.string.broke);
 
             actual_pct.setText("");
         }
