@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sign_two"
-            android:layout_marginTop="15.5dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="114dp"
             android:textColor="@color/black">
         </TextView>
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sign_three"
-            android:layout_marginTop="69dp"
+            android:layout_marginTop="65.5dp"
             android:layout_marginEnd="114dp"
             android:textColor="@color/black">
         </TextView>
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sign_four"
-            android:layout_marginTop="29dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="114dp"
             android:textColor="@color/black">
         </TextView>
@@ -176,26 +176,55 @@
         </View>
 
         <TextView
-            android:id="@+id/hours_text"
-            android:text="@string/hours_worked"
-            android:textSize="18sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="11dp">
-        </TextView>
+        android:id="@+id/hours_worked_text"
+        android:text="@string/hours_worked"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="11dp">
+    </TextView>
 
-        <TextView
-            android:id="@+id/hours"
+        <EditText
+            android:id="@+id/hours_worked"
             android:textSize="18sp"
             android:layout_width="100dp"
             android:layout_height="28dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider"
             android:inputType="number"
-            android:layout_marginTop="11.5dp"
+            android:layout_marginTop="10.5dp"
+            android:layout_marginEnd="12dp"
+            android:autofillHints="0"
+            android:textCursorDrawable="@drawable/cursor"
+            android:background="@drawable/edit_box"
+            android:gravity="center"
+            android:textColor="@color/black">
+        </EditText>
+
+        <TextView
+            android:id="@+id/gross_wage_text"
+            android:text="@string/pre_hours"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hours_worked_text"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="11dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/gross_wage"
+            android:textSize="18sp"
+            android:layout_width="100dp"
+            android:layout_height="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hours_worked"
+            android:inputType="number"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
@@ -205,26 +234,26 @@
         </TextView>
 
         <TextView
-            android:id="@+id/wage_text"
+            android:id="@+id/net_wage_text"
             android:text="@string/hours_divided"
             android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/hours_text"
+            app:layout_constraintTop_toBottomOf="@id/gross_wage_text"
             android:layout_marginStart="4dp"
             android:layout_marginTop="14.5dp">
         </TextView>
 
         <TextView
-            android:id="@+id/wage"
+            android:id="@+id/net_wage"
             android:textSize="18sp"
             android:layout_width="100dp"
             android:layout_height="28dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/hours"
+            app:layout_constraintTop_toBottomOf="@id/gross_wage"
             android:inputType="number"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
@@ -237,7 +266,7 @@
             android:id="@+id/divider2"
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            app:layout_constraintTop_toBottomOf="@id/wage"
+            app:layout_constraintTop_toBottomOf="@id/net_wage"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="12dp"
             android:background="@color/black">
@@ -291,7 +320,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/purchase_cost"
             android:inputType="number"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="11dp"
             android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
@@ -319,7 +348,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/hours_cost"
             android:inputType="number"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="11dp"
             android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"

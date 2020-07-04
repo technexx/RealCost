@@ -31,11 +31,18 @@ public class MainActivity extends AppCompatActivity {
     private String purchase;
     private EditText purchase_cost;
     private TextView hours_cost;
+
+    private EditText hours_worked;
+    private TextView gross_wage;
+    private TextView net_wage;
+
     private TextView actual_pct;
 
     private int incomeVal;
     private int expenseVal;
     private int postExpenses;
+
+
     private int realCost;
     private double percentage;
 
@@ -55,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
         income_edit = findViewById(R.id.income_edit);
         expenses_edit = findViewById(R.id.expenses_edit);
         net_income = findViewById(R.id.net_income);
+
+        hours_worked = findViewById(R.id.hours_worked);
+        gross_wage = findViewById(R.id.gross_wage);
+        net_wage = findViewById(R.id.net_wage);
 
         purchase_cost = findViewById(R.id.purchase_cost);
         hours_cost = findViewById(R.id.hours_cost);

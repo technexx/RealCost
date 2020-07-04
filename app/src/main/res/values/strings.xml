@@ -8,9 +8,10 @@
 
     <string name="income">Monthly Income:</string>
     <string name="expenses">Monthly Expenses:</string>
-    <string name="net_income">Real Income:</string>
+    <string name="net_income">Net Income:</string>
     <string name="hours_worked">Hours Worked:</string>
-    <string name="hours_divided">Real Hourly Wage:</string>
+    <string name="pre_hours">Gross Hourly Wage:</string>
+    <string name="hours_divided">Net Hourly Wage:</string>
 
     <string name="rent">Rent:</string>
     <string name="food">Groceries:</string>
