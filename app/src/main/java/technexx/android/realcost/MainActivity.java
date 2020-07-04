@@ -257,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
         int hoursWorked = pref.getInt("hoursWorked", 0);
         String storeGross = pref.getString("storeGross", "");
         String storeNet = pref.getString("storeNet", "");
+        postExpenses = pref.getInt("postExpenses", 0);
 
         double grossWage = 0;
         double netWage = 0;
@@ -277,6 +278,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (!purchase.equals("")) {
             cost = Double.parseDouble(purchase);
+            percentage = (cost / postExpenses) * 100;
         }
 
         if (grossWage >0 && netWage >0) {
@@ -284,8 +286,8 @@ public class MainActivity extends AppCompatActivity {
             realHours_needed = (cost / netWage);
         }
 
-        hours_cost.setText(String.valueOf(hours_needed));
-        real_hours_cost.setText(String.valueOf(realHours_needed));
+        hours_cost.setText(String.format("%.2f", hours_needed));
+        real_hours_cost.setText(String.format("%.2f", realHours_needed));
 
         if (postExpenses >0) {
             actual_pct.setText(getString(R.string.two_part_ns, String.format("%.2f", percentage), getString(R.string.pct)));
