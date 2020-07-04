@@ -59,8 +59,18 @@ public class MainActivity extends AppCompatActivity {
         int savedExpenses = pref.getInt("expenses", 0);
         final int postExpenses = pref.getInt("postExpenses", 0);
         final int hoursWorked = pref.getInt("hoursWorked", 0);
-        final int grossWage = pref.getInt("grossWage", 0);
-        final int netWage = pref.getInt("netWage", 0);
+        final String storeGross = pref.getString("storeGross", "");
+        final String storeNet = pref.getString("storeNet", "");
+
+        double grossWage = 0;
+        double netWage = 0;
+
+        if (!storeGross.equals("")) {
+            grossWage = Double.parseDouble(storeGross);
+        }
+        if (!storeNet.equals("")) {
+            netWage = Double.parseDouble(storeNet);
+        }
 
         Button about_button = findViewById(R.id.about);
         income_edit = findViewById(R.id.income_edit);
@@ -79,6 +89,10 @@ public class MainActivity extends AppCompatActivity {
         income_edit.setText(String.valueOf(savedIncome));
         expenses_edit.setText(String.valueOf(savedExpenses));
         net_income.setText(String.valueOf(postExpenses));
+
+        hours_worked.setText(String.valueOf(hoursWorked));
+        gross_wage.setText(String.format("%.2f", grossWage));
+        net_wage.setText(String.format("%.2f", netWage));
 
         income_edit.addTextChangedListener(new TextWatcher() {
             @Override
@@ -197,27 +211,42 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = pref.edit();
 
         int hoursWorked = pref.getInt("hoursWorked", 0);
-        int grossWage = pref.getInt("grossWage", 0);
-        int netWage = pref.getInt("netWage", 0);
+        String storeGross = pref.getString("storeGross", "");
+        String storeNet = pref.getString("storeNet", "");
+
+        double grossWage = 0;
+        double netWage = 0;
+
+        if (!storeGross.equals("")) {
+            grossWage = Double.parseDouble(storeGross);
+        }
+        if (!storeNet.equals("")) {
+            netWage = Double.parseDouble(storeNet);
+        }
 
         String hours = hours_worked.getText().toString();
         if (!hours.equals("")) {
             hoursWorked = Integer.parseInt(hours);
         } else {
-            hoursWorked = 1;
+            hoursWorked = 0;
+            gross_wage.setText("");
+            net_wage.setText("");
         }
 
-        grossWage = incomeVal / hoursWorked;
-        netWage = postExpenses / hoursWorked;
-
-        gross_wage.setText(String.valueOf(grossWage));
-        net_wage.setText(String.valueOf(netWage));
+        if (hoursWorked >0) {
+            grossWage = (double) incomeVal / hoursWorked;
+            netWage = (double) postExpenses / hoursWorked;
+            gross_wage.setText(String.format("%.2f", grossWage));
+            net_wage.setText(String.format("%.2f", netWage));
+            storeGross = String.valueOf(grossWage);
+            storeNet = String.valueOf(netWage);
+        }
 
         purchase = purchase_cost.getText().toString();
 
         editor.putInt("hoursWorked", hoursWorked);
-        editor.putInt("grossWage", grossWage);
-        editor.putInt("netWage", netWage);
+        editor.putString("storeGross", storeGross);
+        editor.putString("storeNet", storeNet);
         editor.apply();
     }
 
@@ -226,8 +255,18 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = pref.edit();
 
         int hoursWorked = pref.getInt("hoursWorked", 0);
-        int grossWage = pref.getInt("grossWage", 0);
-        int netWage = pref.getInt("netWage", 0);
+        String storeGross = pref.getString("storeGross", "");
+        String storeNet = pref.getString("storeNet", "");
+
+        double grossWage = 0;
+        double netWage = 0;
+
+        if (!storeGross.equals("")) {
+            grossWage = Double.parseDouble(storeGross);
+        }
+        if (!storeNet.equals("")) {
+            netWage = Double.parseDouble(storeNet);
+        }
 
         double cost = 0;
         String hours = "";
