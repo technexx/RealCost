@@ -114,6 +114,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        hours_worked.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+            @Override
+            public void afterTextChanged(Editable s) {
+                convert();
+                hourCalc();
+            }
+        });
+
         purchase_cost.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -172,7 +186,6 @@ public class MainActivity extends AppCompatActivity {
         postExpenses = (incomeVal - expenseVal);
         net_income.setText(String.valueOf(postExpenses));
 
-
         editor.putInt("income", incomeVal);
         editor.putInt("expenses", expenseVal);
         editor.putInt("postExpenses", postExpenses);
@@ -191,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         if (!hours.equals("")) {
             hoursWorked = Integer.parseInt(hours);
         } else {
-            hoursWorked = 0;
+            hoursWorked = 1;
         }
 
         grossWage = incomeVal / hoursWorked;
@@ -227,8 +240,10 @@ public class MainActivity extends AppCompatActivity {
             cost = Double.parseDouble(purchase);
         }
 
-        hours_needed = (cost / grossWage);
-        realHours_needed = (cost / netWage);
+        if (grossWage >0 && netWage >0) {
+            hours_needed = (cost / grossWage);
+            realHours_needed = (cost / netWage);
+        }
 
         hours_cost.setText(String.valueOf(hours_needed));
         real_hours_cost.setText(String.valueOf(realHours_needed));

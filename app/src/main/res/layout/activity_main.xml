@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="11.5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="114dp"
             android:textColor="@color/black">
         </TextView>
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sign_one"
-            android:layout_marginTop="16.5dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="114dp"
             android:textColor="@color/black">
         </TextView>
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sign_two"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="114dp"
             android:textColor="@color/black">
         </TextView>
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sign_three"
-            android:layout_marginTop="65.5dp"
+            android:layout_marginTop="57dp"
             android:layout_marginEnd="114dp"
             android:textColor="@color/black">
         </TextView>
@@ -73,7 +73,20 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sign_four"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="114dp"
+            android:textColor="@color/black">
+        </TextView>
+
+        <TextView
+            android:id="@+id/sign_six"
+            android:text="@string/dollar"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="238dp"
             android:layout_marginEnd="114dp"
             android:textColor="@color/black">
         </TextView>
@@ -87,24 +100,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="11dp">
+            android:layout_marginTop="8dp">
         </TextView>
 
         <EditText
             android:id="@+id/income_edit"
             android:layout_width="100dp"
-            android:layout_height="28dp"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:inputType="number"
-            android:layout_marginTop="11.5dp"
             android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
-            android:background="@drawable/edit_box"
-            android:textSize="20sp"
-            android:gravity="center"
+            android:textSize="18sp"
+            android:gravity="center_horizontal"
             android:textColor="@color/darkGreen"
+            android:paddingBottom="6dp"
             android:maxLength="7" />
 
         <TextView
@@ -116,24 +128,24 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/income_text"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="14.5dp">
+            android:layout_marginTop="8dp">
         </TextView>
 
         <EditText
             android:id="@+id/expenses_edit"
             android:layout_width="100dp"
-            android:layout_height="28dp"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/income_edit"
+            app:layout_constraintTop_toTopOf="parent"
             android:inputType="number"
-            android:layout_marginTop="12dp"
             android:layout_marginEnd="12dp"
+            android:layout_marginTop="32dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
-            android:background="@drawable/edit_box"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:gravity="center"
             android:textColor="@color/Red_Alt"
+            android:paddingBottom="6dp"
             android:maxLength="7"/>
 
         <TextView
@@ -145,18 +157,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/expenses_text"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="14.5dp">
+            android:layout_marginTop="8dp">
         </TextView>
 
         <TextView
             android:id="@+id/net_income"
             android:textSize="18sp"
             android:layout_width="100dp"
-            android:layout_height="28dp"
+            android:layout_height="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/expenses_edit"
             android:inputType="number"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="6dp"
             android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
@@ -182,24 +194,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintTop_toTopOf="@id/divider"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="11dp">
+        android:layout_marginTop="8dp">
     </TextView>
 
         <EditText
             android:id="@+id/hours_worked"
             android:textSize="18sp"
             android:layout_width="100dp"
-            android:layout_height="28dp"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider"
+            app:layout_constraintTop_toTopOf="parent"
             android:inputType="number"
-            android:layout_marginTop="10.5dp"
             android:layout_marginEnd="12dp"
+            android:layout_marginTop="112dp"
+            android:paddingBottom="6dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
-            android:background="@drawable/edit_box"
             android:gravity="center"
             android:textColor="@color/black">
         </EditText>
@@ -213,18 +225,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/hours_worked_text"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="11dp">
+            android:layout_marginTop="8dp">
         </TextView>
 
         <TextView
             android:id="@+id/gross_wage"
             android:textSize="18sp"
             android:layout_width="100dp"
-            android:layout_height="28dp"
+            android:layout_height="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/hours_worked"
             android:inputType="number"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="7dp"
             android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
@@ -242,18 +254,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/gross_wage_text"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="14.5dp">
+            android:layout_marginTop="9dp">
         </TextView>
 
         <TextView
             android:id="@+id/net_wage"
             android:textSize="18sp"
             android:layout_width="100dp"
-            android:layout_height="28dp"
+            android:layout_height="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/gross_wage"
             android:inputType="number"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
@@ -281,21 +293,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider2"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="11dp">
+            android:layout_marginTop="7dp">
         </TextView>
 
         <EditText
             android:id="@+id/purchase_cost"
             android:layout_width="100dp"
-            android:layout_height="28dp"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/divider2"
+            app:layout_constraintTop_toTopOf="parent"
             android:inputType="number"
-            android:layout_marginTop="11.5dp"
+            android:layout_marginTop="226dp"
             android:layout_marginEnd="12dp"
+            android:paddingBottom="6dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
-            android:background="@drawable/edit_box"
             android:textSize="18sp"
             android:gravity="center"
             android:maxLength="5"
@@ -310,17 +322,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/purchase_text"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="14.5dp">
+            android:layout_marginTop="9dp">
         </TextView>
 
         <TextView
             android:id="@+id/hours_cost"
             android:layout_width="100dp"
-            android:layout_height="28dp"
+            android:layout_height="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/purchase_cost"
             android:inputType="number"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="7dp"
             android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
@@ -338,17 +350,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/hours_cost_text"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="14.5dp">
+            android:layout_marginTop="7.5dp">
         </TextView>
 
         <TextView
             android:id="@+id/real_hours_cost"
             android:layout_width="100dp"
-            android:layout_height="28dp"
+            android:layout_height="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/hours_cost"
             android:inputType="number"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="7dp"
             android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
@@ -366,17 +378,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/real_hours_cost_text"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="14.5dp">
+            android:layout_marginTop="8dp">
         </TextView>
 
         <TextView
             android:id="@+id/percentage"
             android:layout_width="100dp"
-            android:layout_height="28dp"
+            android:layout_height="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/real_hours_cost"
             android:inputType="number"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="7dp"
             android:layout_marginEnd="12dp"
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
