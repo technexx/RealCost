@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private String purchase;
     private EditText purchase_cost;
     private TextView hours_cost;
+    private TextView real_hours_cost;
 
     private EditText hours_worked;
     private TextView gross_wage;
@@ -57,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
         int savedIncome = pref.getInt("income", 0);
         int savedExpenses = pref.getInt("expenses", 0);
         final int postExpenses = pref.getInt("postExpenses", 0);
+        final int hoursWorked = pref.getInt("hoursWorked", 0);
+        final int grossWage = pref.getInt("grossWage", 0);
+        final int netWage = pref.getInt("netWage", 0);
 
         Button about_button = findViewById(R.id.about);
         income_edit = findViewById(R.id.income_edit);
@@ -69,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         purchase_cost = findViewById(R.id.purchase_cost);
         hours_cost = findViewById(R.id.hours_cost);
+        real_hours_cost = findViewById(R.id.real_hours_cost);
         actual_pct = findViewById(R.id.percentage);
 
         income_edit.setText(String.valueOf(savedIncome));
@@ -167,13 +172,6 @@ public class MainActivity extends AppCompatActivity {
         postExpenses = (incomeVal - expenseVal);
         net_income.setText(String.valueOf(postExpenses));
 
-//        if (postExpenses >0) {
-//            net_income.setTextColor(getResources().getColor(R.color.darkGreen));
-//        } else if (postExpenses <0) {
-//            net_income.setTextColor(getResources().getColor(R.color.Red_Alt));
-//        } else {
-//            net_income.setTextColor(getResources().getColor(R.color.black));
-//        }
 
         editor.putInt("income", incomeVal);
         editor.putInt("expenses", expenseVal);
@@ -181,16 +179,47 @@ public class MainActivity extends AppCompatActivity {
         editor.apply();
     }
 
+    private void hourCalc() {
+        SharedPreferences pref = getSharedPreferences("Pref", 0);
+        SharedPreferences.Editor editor = pref.edit();
+
+        int hoursWorked = pref.getInt("hoursWorked", 0);
+        int grossWage = pref.getInt("grossWage", 0);
+        int netWage = pref.getInt("netWage", 0);
+
+        String hours = hours_worked.getText().toString();
+        if (!hours.equals("")) {
+            hoursWorked = Integer.parseInt(hours);
+        } else {
+            hoursWorked = 0;
+        }
+
+        grossWage = incomeVal / hoursWorked;
+        netWage = postExpenses / hoursWorked;
+
+        gross_wage.setText(String.valueOf(grossWage));
+        net_wage.setText(String.valueOf(netWage));
+
+        purchase = purchase_cost.getText().toString();
+
+        editor.putInt("hoursWorked", hoursWorked);
+        editor.putInt("grossWage", grossWage);
+        editor.putInt("netWage", netWage);
+        editor.apply();
+    }
+
     private void realPrice() {
         SharedPreferences pref = getSharedPreferences("Pref", 0);
         SharedPreferences.Editor editor = pref.edit();
 
-        incomeVal = pref.getInt("income", 0);
-        expenseVal = pref.getInt("expenses", 0);
-        postExpenses = pref.getInt("postExpenses", 0);
+        int hoursWorked = pref.getInt("hoursWorked", 0);
+        int grossWage = pref.getInt("grossWage", 0);
+        int netWage = pref.getInt("netWage", 0);
 
-        double pct = 0;
         double cost = 0;
+        String hours = "";
+        double hours_needed = 0;
+        double realHours_needed = 0;
 
         purchase = purchase_cost.getText().toString();
 
@@ -198,24 +227,16 @@ public class MainActivity extends AppCompatActivity {
             cost = Double.parseDouble(purchase);
         }
 
-        pct = (double) incomeVal / postExpenses;
-        realCost = (int) (cost * pct);
+        hours_needed = (cost / grossWage);
+        realHours_needed = (cost / netWage);
+
+        hours_cost.setText(String.valueOf(hours_needed));
+        real_hours_cost.setText(String.valueOf(realHours_needed));
 
         if (postExpenses >0) {
-            hours_cost.setFilters(new InputFilter[] {new InputFilter.LengthFilter(7)});
-            hours_cost.setTextSize(22);
-            hours_cost.setTypeface(null, Typeface.NORMAL);
-            hours_cost.setText(String.valueOf(realCost));
-            percentage = ( (double) cost / (double) postExpenses) * 100;
             actual_pct.setText(getString(R.string.two_part_ns, String.format("%.2f", percentage), getString(R.string.pct)));
         } else {
-            hours_cost.setFilters(new InputFilter[] {new InputFilter.LengthFilter(15)});
-            hours_cost.setTextSize(15);
-            hours_cost.setTypeface(null, Typeface.BOLD);
-            hours_cost.setText(R.string.broke);
-
             actual_pct.setText("");
         }
-
     }
 }

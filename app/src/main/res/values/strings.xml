@@ -20,7 +20,8 @@
     <string name="total">Net Income:</string>
 
     <string name="item_cost">Purchase Cost:</string>
-    <string name="actual_cost">Hours Cost:</string>
+    <string name="pre_hours_cost">Hours Needed:</string>
+    <string name="real_hours_cost">Actual Hours Needed:</string>
 
     <string name="percentage">Percent of Real Income:</string>
 

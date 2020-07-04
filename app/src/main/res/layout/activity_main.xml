@@ -303,7 +303,7 @@
 
         <TextView
             android:id="@+id/hours_cost_text"
-            android:text="@string/actual_cost"
+            android:text="@string/pre_hours_cost"
             android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -330,8 +330,8 @@
             android:textColor="@color/Red_Alt" />
 
         <TextView
-            android:id="@+id/percentage_text"
-            android:text="@string/percentage"
+            android:id="@+id/real_hours_cost_text"
+            android:text="@string/real_hours_cost"
             android:textSize="18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -342,11 +342,39 @@
         </TextView>
 
         <TextView
-            android:id="@+id/percentage"
+            android:id="@+id/real_hours_cost"
             android:layout_width="100dp"
             android:layout_height="28dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/hours_cost"
+            android:inputType="number"
+            android:layout_marginTop="11dp"
+            android:layout_marginEnd="12dp"
+            android:autofillHints="0"
+            android:textCursorDrawable="@drawable/cursor"
+            android:background="@drawable/edit_box"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/Red_Alt" />
+
+        <TextView
+            android:id="@+id/percentage_text"
+            android:text="@string/percentage"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/real_hours_cost_text"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="14.5dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/percentage"
+            android:layout_width="100dp"
+            android:layout_height="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/real_hours_cost"
             android:inputType="number"
             android:layout_marginTop="11dp"
             android:layout_marginEnd="12dp"
