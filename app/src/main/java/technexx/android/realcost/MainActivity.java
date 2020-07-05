@@ -256,6 +256,10 @@ public class MainActivity extends AppCompatActivity {
         String storeNet = pref.getString("storeNet", "");
         postExpenses = pref.getInt("postExpenses", 0);
 
+        hours_cost.setTextColor(getResources().getColor(R.color.darkGreen));
+        real_hours_cost.setTextColor(getResources().getColor(R.color.Red_Alt));
+        actual_pct.setTextColor(getResources().getColor(R.color.Red_Alt));
+
         double grossWage = 0;
         double netWage = 0;
 
@@ -297,6 +301,9 @@ public class MainActivity extends AppCompatActivity {
                 actual_pct.setText(getString(R.string.two_part_ns, String.format("%.2f", percentage), getString(R.string.pct)));
             }
         } else if (!purchase.equals("")){
+            hours_cost.setTextColor(getResources().getColor(R.color.black));
+            real_hours_cost.setTextColor(getResources().getColor(R.color.black));
+            actual_pct.setTextColor(getResources().getColor(R.color.black));
             hours_cost.setText(R.string.broke);
             real_hours_cost.setText(R.string.broke);
             actual_pct.setText(R.string.broke);

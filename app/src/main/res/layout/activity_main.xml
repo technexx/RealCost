@@ -338,8 +338,7 @@
             android:textCursorDrawable="@drawable/cursor"
             android:background="@drawable/edit_box"
             android:textSize="18sp"
-            android:gravity="center"
-            android:textColor="@color/darkGreen" />
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/real_hours_cost_text"
@@ -366,8 +365,7 @@
             android:textCursorDrawable="@drawable/cursor"
             android:background="@drawable/edit_box"
             android:textSize="18sp"
-            android:gravity="center"
-            android:textColor="@color/Red_Alt" />
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/percentage_text"
@@ -395,7 +393,6 @@
             android:background="@drawable/edit_box"
             android:textSize="18sp"
             android:gravity="center"
-            android:textColor="@color/Red_Alt"
             android:maxLength="7"/>
 
         <View
