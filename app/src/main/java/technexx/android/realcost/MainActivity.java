@@ -281,9 +281,15 @@ public class MainActivity extends AppCompatActivity {
             cost = Double.parseDouble(purchase);
         }
 
+        hours_cost.setText("");
+        real_hours_cost.setText("");
+        actual_pct.setText("");
+
         if (postExpenses >0) {
             if (!purchase.equals("")) {
                 percentage = (cost / postExpenses) * 100;
+            } else {
+                percentage = 0;
             }
 
             if (grossWage >0 && netWage >0) {
@@ -294,7 +300,7 @@ public class MainActivity extends AppCompatActivity {
             if (hours_needed >0) {
                 hours_cost.setText(String.format("%.2f", hours_needed));
             }
-            if (realHours_needed > 0) {
+            if (realHours_needed >0) {
                 real_hours_cost.setText(String.format("%.2f", realHours_needed));
             }
             if (percentage >0) {
@@ -311,6 +317,10 @@ public class MainActivity extends AppCompatActivity {
             hours_cost.setText("");
             real_hours_cost.setText("");
             actual_pct.setText("");
+        }
+
+        if (cost > postExpenses && postExpenses > 0) {
+            purchase_cost.setText(String.valueOf(postExpenses));
         }
     }
 }
