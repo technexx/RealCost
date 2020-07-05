@@ -164,9 +164,9 @@ public class MainActivity extends AppCompatActivity {
         about_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                popupWindow.setWidth(800);
-                popupWindow.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
-                popupWindow.showAtLocation(aboutLayout, Gravity.CENTER, 0, 0);
+                popupWindow.setWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
+                popupWindow.setHeight(598);
+                popupWindow.showAtLocation(aboutLayout, Gravity.BOTTOM, 0, 0);
             }
         });
     }
@@ -275,20 +275,34 @@ public class MainActivity extends AppCompatActivity {
 
         if (!purchase.equals("")) {
             cost = Double.parseDouble(purchase);
-            percentage = (cost / postExpenses) * 100;
         }
-
-        if (grossWage >0 && netWage >0) {
-            hours_needed = (cost / grossWage);
-            realHours_needed = (cost / netWage);
-        }
-
-        hours_cost.setText(String.format("%.2f", hours_needed));
-        real_hours_cost.setText(String.format("%.2f", realHours_needed));
 
         if (postExpenses >0) {
-            actual_pct.setText(getString(R.string.two_part_ns, String.format("%.2f", percentage), getString(R.string.pct)));
+            if (!purchase.equals("")) {
+                percentage = (cost / postExpenses) * 100;
+            }
+
+            if (grossWage >0 && netWage >0) {
+                hours_needed = (cost / grossWage);
+                realHours_needed = (cost / netWage);
+            }
+
+            if (hours_needed >0) {
+                hours_cost.setText(String.format("%.2f", hours_needed));
+            }
+            if (realHours_needed > 0) {
+                real_hours_cost.setText(String.format("%.2f", realHours_needed));
+            }
+            if (percentage >0) {
+                actual_pct.setText(getString(R.string.two_part_ns, String.format("%.2f", percentage), getString(R.string.pct)));
+            }
+        } else if (!purchase.equals("")){
+            hours_cost.setText(R.string.broke);
+            real_hours_cost.setText(R.string.broke);
+            actual_pct.setText(R.string.broke);
         } else {
+            hours_cost.setText("");
+            real_hours_cost.setText("");
             actual_pct.setText("");
         }
     }

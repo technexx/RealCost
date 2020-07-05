@@ -25,8 +25,8 @@
 
     <string name="percentage">Percent of Net Income:</string>
 
-    <string name="broke">You\'re broke!</string>
+    <string name="broke">Broke!</string>
 
     <string name="about">About</string>
-    <string name="description">This is a simple calculator designed to highlight the real cost of purchases when compared to your net income. I often fall into the trap of, \"I made X amount this month, of course I can afford this!\" while conveniently forgetting my bills.\n\nThe formula is a straight percentage multiplier. For example, if your income is $2000 and your expenses are $1500, you are left with $500. A $20 purchase would thus, relative to your net income, cost four times as much, or $80. </string>
+    <string name="description">This is a simple calculator designed to highlight the real cost of purchases when compared to your net income.\n\nFor example, if you work 150 hours this month and make $3,000, your hourly rate is $20.00. However, if you only have $500 left after bills, your hourly rate for that \"cash in hand\" is $3.33. A \$200 Cerberus demon costume for your dog then, instead of costing 10 hours of labor, actually costs 60.\n\n  </string>
 </resources>

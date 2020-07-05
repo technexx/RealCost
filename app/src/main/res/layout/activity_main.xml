@@ -242,7 +242,7 @@
             android:textCursorDrawable="@drawable/cursor"
             android:background="@drawable/edit_box"
             android:gravity="center"
-            android:textColor="@color/black">
+            android:textColor="@color/darkGreen">
         </TextView>
 
         <TextView
@@ -271,7 +271,7 @@
             android:textCursorDrawable="@drawable/cursor"
             android:background="@drawable/edit_box"
             android:gravity="center"
-            android:textColor="@color/black">
+            android:textColor="@color/Red_Alt">
         </TextView>
 
         <View
@@ -311,7 +311,7 @@
             android:textSize="18sp"
             android:gravity="center"
             android:maxLength="5"
-            android:textColor="@color/darkGreen"/>
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/hours_cost_text"
@@ -339,7 +339,7 @@
             android:background="@drawable/edit_box"
             android:textSize="18sp"
             android:gravity="center"
-            android:textColor="@color/Red_Alt" />
+            android:textColor="@color/darkGreen" />
 
         <TextView
             android:id="@+id/real_hours_cost_text"
@@ -395,7 +395,7 @@
             android:background="@drawable/edit_box"
             android:textSize="18sp"
             android:gravity="center"
-            android:textColor="@color/black"
+            android:textColor="@color/Red_Alt"
             android:maxLength="7"/>
 
         <View
