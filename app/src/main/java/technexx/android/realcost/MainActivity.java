@@ -104,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 convert();
-                realPrice();
                 hourCalc();
+                realPrice();
             }
         });
 
@@ -119,8 +119,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 convert();
-                realPrice();
                 hourCalc();
+                realPrice();
             }
         });
 
@@ -134,8 +134,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 convert();
-                realPrice();
                 hourCalc();
+                realPrice();
             }
         });
 
