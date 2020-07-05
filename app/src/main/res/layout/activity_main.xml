@@ -213,6 +213,7 @@
             android:autofillHints="0"
             android:textCursorDrawable="@drawable/cursor"
             android:gravity="center"
+            android:maxLength="5"
             android:textColor="@color/black">
         </EditText>
 
