@@ -104,10 +104,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 convert();
-                purchase = purchase_cost.getText().toString();
-                if (!purchase.equals("")) {
-                    realPrice();
-                }
+                realPrice();
+                hourCalc();
             }
         });
 
@@ -121,10 +119,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 convert();
-                purchase = purchase_cost.getText().toString();
-                if (!purchase.equals("")) {
-                    realPrice();
-                }
+                realPrice();
+                hourCalc();
             }
         });
 
@@ -138,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 convert();
+                realPrice();
                 hourCalc();
             }
         });
